@@ -88,7 +88,16 @@ const createUsernames = function (accs) {
   });
 };
 createUsernames(accounts);
-console.log(accounts);
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+console.log(movements);
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+
+const withdrwals = movements.filter((mov) => mov < 0);
+console.log(deposits);
+console.log(withdrwals);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -99,7 +108,5 @@ const currencies = new Map([
   ["EUR", "Euro"],
   ["GBP", "Pound sterling"],
 ]);
-
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
